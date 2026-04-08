@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title id="title">Placeholder hero image</title>
+  <desc id="desc">A neutral placeholder used for the hero section.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2b1a16"/>
+      <stop offset="50%" stop-color="#4c2a20"/>
+      <stop offset="100%" stop-color="#8a6b56"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#bg)"/>
+  <g fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="16">
+    <circle cx="1180" cy="340" r="180"/>
+    <path d="M340 710c120-120 240-180 360-180s240 60 360 180"/>
+  </g>
+  <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" fill="#f4e9da" font-family="Georgia, serif" font-size="72">Hero Placeholder</text>
+</svg>

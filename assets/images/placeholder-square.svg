@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 620" role="img" aria-labelledby="title desc">
+  <title id="title">Placeholder square image</title>
+  <desc id="desc">A neutral placeholder for practice images.</desc>
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#a6734d"/>
+      <stop offset="100%" stop-color="#5c3022"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="620" fill="url(#g)"/>
+  <circle cx="400" cy="270" r="110" fill="rgba(255,255,255,0.16)"/>
+  <path d="M250 470c75-55 130-82 165-82s90 27 165 82" fill="none" stroke="rgba(255,255,255,0.22)" stroke-width="24" stroke-linecap="round"/>
+  <text x="50%" y="560" text-anchor="middle" fill="#f7efe4" font-family="Arial, sans-serif" font-size="40">Image Placeholder</text>
+</svg>

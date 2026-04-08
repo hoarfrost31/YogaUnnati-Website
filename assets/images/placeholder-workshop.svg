@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 720" role="img" aria-labelledby="title desc">
+  <title id="title">Placeholder workshop image</title>
+  <desc id="desc">A neutral placeholder for the upcoming workshop card.</desc>
+  <defs>
+    <linearGradient id="sunset" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f3b06f"/>
+      <stop offset="55%" stop-color="#8a4a2e"/>
+      <stop offset="100%" stop-color="#2c1a18"/>
+    </linearGradient>
+  </defs>
+  <rect width="1000" height="720" fill="url(#sunset)"/>
+  <circle cx="300" cy="240" r="110" fill="rgba(255,224,168,0.72)"/>
+  <path d="M0 580c110-40 220-60 330-60 160 0 250 80 420 80 90 0 173-18 250-54v174H0z" fill="rgba(28,18,16,0.5)"/>
+  <text x="50%" y="645" text-anchor="middle" fill="#fff5e9" font-family="Arial, sans-serif" font-size="44">Workshop Placeholder</text>
+</svg>

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 700" role="img" aria-labelledby="title desc">
+  <title id="title">Placeholder content image</title>
+  <desc id="desc">A neutral placeholder for featured visual content.</desc>
+  <rect width="900" height="700" fill="#d9c2a6"/>
+  <rect x="80" y="80" width="310" height="540" fill="#3d1f18"/>
+  <rect x="430" y="80" width="390" height="540" fill="#9b6c4b"/>
+  <text x="235" y="260" text-anchor="middle" fill="#f5eee3" font-family="Georgia, serif" font-size="54">Content</text>
+  <text x="625" y="350" text-anchor="middle" fill="#f5eee3" font-family="Georgia, serif" font-size="54">Placeholder</text>
+</svg>

@@ -1,58 +1,40 @@
-const altGalleryRoot = document.querySelector("[data-alt-gallery]");
-const altGalleryFeature = document.querySelector("[data-alt-gallery-feature]");
-const altGalleryThumbs = Array.from(document.querySelectorAll(".gallery-thumb"));
+const gallerySlider = document.querySelector("[data-gallery-slider]");
+const galleryTrack = gallerySlider?.querySelector("[data-gallery-track]");
+const gallerySlides = Array.from(galleryTrack?.querySelectorAll(".gallery-slide") || []);
+const galleryPrev = gallerySlider?.querySelector("[data-gallery-prev]");
+const galleryNext = gallerySlider?.querySelector("[data-gallery-next]");
 const experienceCarousel = document.querySelector("[data-experience-carousel]");
 const experienceTrack = experienceCarousel?.querySelector(".experience-grid");
 const experiencePrev = experienceCarousel?.querySelector("[data-carousel-prev]");
 const experienceNext = experienceCarousel?.querySelector("[data-carousel-next]");
 
-if (altGalleryRoot && altGalleryFeature && altGalleryThumbs.length > 0) {
-  let activeIndex = altGalleryThumbs.findIndex((thumb) => thumb.classList.contains("is-active"));
-  let timerId;
+if (gallerySlider && galleryTrack && gallerySlides.length > 0) {
+  let activeIndex = 0;
+  let galleryTimer;
 
-  if (activeIndex < 0) {
-    activeIndex = 0;
-    altGalleryThumbs[0].classList.add("is-active");
-  }
-
-  const setActive = (index) => {
-    const thumb = altGalleryThumbs[index];
-    if (!thumb) return;
-
-    altGalleryThumbs.forEach((item) => item.classList.remove("is-active"));
-    thumb.classList.add("is-active");
-
-    const nextSrc = thumb.dataset.gallerySrc;
-    const nextAlt = thumb.dataset.galleryAlt;
-
-    altGalleryFeature.style.opacity = "0.25";
-    altGalleryFeature.style.transform = "scale(1.035)";
-
-    window.setTimeout(() => {
-      altGalleryFeature.src = nextSrc;
-      altGalleryFeature.alt = nextAlt;
-      altGalleryFeature.style.opacity = "1";
-      altGalleryFeature.style.transform = "scale(1)";
-    }, 170);
-
-    activeIndex = index;
+  const setSlide = (index) => {
+    activeIndex = (index + gallerySlides.length) % gallerySlides.length;
+    galleryTrack.style.transform = `translateX(-${activeIndex * 100}%)`;
   };
 
-  const restartTimer = () => {
-    window.clearInterval(timerId);
-    timerId = window.setInterval(() => {
-      setActive((activeIndex + 1) % altGalleryThumbs.length);
+  const restartGallery = () => {
+    window.clearInterval(galleryTimer);
+    galleryTimer = window.setInterval(() => {
+      setSlide(activeIndex + 1);
     }, 3400);
   };
 
-  altGalleryThumbs.forEach((thumb, index) => {
-    thumb.addEventListener("click", () => {
-      setActive(index);
-      restartTimer();
-    });
+  galleryPrev?.addEventListener("click", () => {
+    setSlide(activeIndex - 1);
+    restartGallery();
   });
 
-  restartTimer();
+  galleryNext?.addEventListener("click", () => {
+    setSlide(activeIndex + 1);
+    restartGallery();
+  });
+
+  restartGallery();
 }
 
 if (experienceCarousel && experienceTrack && experiencePrev && experienceNext) {

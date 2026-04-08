@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="children-program.css">
+  <script src="site-nav.js" defer></script>
   <script src="children-program.js" defer></script>
 </head>
 <body>
@@ -23,13 +24,19 @@
             <span class="site-brand__eyebrow">YogaUnnati</span>
           </span>
         </a>
-        <nav class="site-nav" aria-label="Primary">
+        <button class="site-nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Open menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <nav class="site-nav" aria-label="Primary" id="primary-nav">
           <a class="site-nav__link" href="./index.html">Home</a>
           <a class="site-nav__link is-active" href="./children-program.html">Children's Program</a>
           <a class="site-nav__link" href="./about.html">About</a>
         </nav>
       </div>
     </div>
+    <div class="site-nav-backdrop" hidden></div>
 
     <div class="container hero__inner">
       <div class="hero__copy">
@@ -39,14 +46,15 @@
           A guided online offering for children that blends daily practice, personal attention,
           and playful involvement to support inner balance and discipline.
         </p>
-        <div class="hero__actions">
-          <a class="button button--primary" href="#register">Register</a>
-          <a class="button button--secondary" href="#highlights">Explore Program</a>
-        </div>
       </div>
 
       <div class="hero__media">
         <img src="assets/images/Childrens Page/1633181269-1633181268504.avif" alt="Children gathered around Sadhguru outdoors" loading="eager">
+      </div>
+
+      <div class="hero__actions">
+        <a class="button button--primary" href="#register">Register</a>
+        <a class="button button--secondary" href="#highlights">Explore Program</a>
       </div>
     </div>
   </header>
@@ -218,55 +226,47 @@
           <h2>Gallery / Glimpses</h2>
         </div>
 
-        <div class="gallery-shell" data-alt-gallery>
-          <div class="gallery-feature">
-            <div class="gallery-feature__frame">
-              <img
-                src="assets/images/Childrens Page/group_glimpse2.webp"
-                alt="Children in an online yoga session"
-                class="gallery-feature__image"
-                data-alt-gallery-feature
-                loading="lazy"
-              >
+        <div class="gallery-shell" data-gallery-slider>
+          <div class="gallery-feature__frame">
+            <button type="button" class="gallery-control gallery-control--prev" data-gallery-prev aria-label="Show previous gallery image">
+              <span aria-hidden="true">&larr;</span>
+            </button>
+            <div class="gallery-track" data-gallery-track>
+              <figure class="gallery-slide">
+                <img
+                  src="assets/images/Childrens Page/group_glimpse2.webp"
+                  alt="Children in an online yoga session"
+                  class="gallery-feature__image"
+                  loading="lazy"
+                >
+              </figure>
+              <figure class="gallery-slide">
+                <img
+                  src="assets/images/Childrens Page/group_glimpse3'2.webp"
+                  alt="Teacher and students in class"
+                  class="gallery-feature__image"
+                  loading="lazy"
+                >
+              </figure>
+              <figure class="gallery-slide">
+                <img
+                  src="assets/images/Childrens Page/swaraBhatt.webp"
+                  alt="Child practicing stillness"
+                  class="gallery-feature__image"
+                  loading="lazy"
+                >
+              </figure>
+              <figure class="gallery-slide">
+                <img
+                  src="assets/images/Childrens Page/WhatsApp Image 2025-05-22 at 3.02.27 PM.webp"
+                  alt="Cook-along style activity"
+                  class="gallery-feature__image"
+                  loading="lazy"
+                >
+              </figure>
             </div>
-          </div>
-
-          <div class="gallery-grid">
-            <button
-              type="button"
-              class="gallery-thumb is-active"
-              data-gallery-src="assets/images/Childrens Page/group_glimpse2.webp"
-              data-gallery-alt="Children in an online yoga session"
-              aria-label="Show gallery image one"
-            >
-              <img src="assets/images/Childrens Page/group_glimpse2.webp" alt="Gallery thumbnail one" loading="lazy">
-            </button>
-            <button
-              type="button"
-              class="gallery-thumb"
-              data-gallery-src="assets/images/Childrens Page/group_glimpse3'2.webp"
-              data-gallery-alt="Teacher and students in class"
-              aria-label="Show gallery image two"
-            >
-              <img src="assets/images/Childrens Page/group_glimpse3'2.webp" alt="Gallery thumbnail two" loading="lazy">
-            </button>
-            <button
-              type="button"
-              class="gallery-thumb"
-              data-gallery-src="assets/images/Childrens Page/swaraBhatt.webp"
-              data-gallery-alt="Child practicing stillness"
-              aria-label="Show gallery image three"
-            >
-              <img src="assets/images/Childrens Page/swaraBhatt.webp" alt="Gallery thumbnail three" loading="lazy">
-            </button>
-            <button
-              type="button"
-              class="gallery-thumb"
-              data-gallery-src="assets/images/Childrens Page/WhatsApp Image 2025-05-22 at 3.02.27 PM.webp"
-              data-gallery-alt="Cook-along style activity"
-              aria-label="Show gallery image four"
-            >
-              <img src="assets/images/Childrens Page/WhatsApp Image 2025-05-22 at 3.02.27 PM.webp" alt="Gallery thumbnail four" loading="lazy">
+            <button type="button" class="gallery-control gallery-control--next" data-gallery-next aria-label="Show next gallery image">
+              <span aria-hidden="true">&rarr;</span>
             </button>
           </div>
         </div>

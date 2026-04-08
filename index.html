@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <script src="site-nav.js" defer></script>
 </head>
 <body id="top">
   <header class="hero">
@@ -26,13 +27,19 @@
             <span class="site-brand__eyebrow">YogaUnnati</span>
           </span>
         </a>
-        <nav class="site-nav" aria-label="Primary">
+        <button class="site-nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Open menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <nav class="site-nav" aria-label="Primary" id="primary-nav">
           <a class="site-nav__link is-active" href="#top">Home</a>
           <a class="site-nav__link" href="./children-program.html">Children's Program</a>
           <a class="site-nav__link" href="./about.html">About</a>
         </nav>
       </div>
     </div>
+    <div class="site-nav-backdrop" hidden></div>
     <div class="hero__content container">
       <h1>Classical Hatha Yoga</h1>
       <p>In its purest form</p>

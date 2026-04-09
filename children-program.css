@@ -111,6 +111,18 @@ h3 {
   border-bottom: 1px solid rgba(248, 240, 228, 0.08);
 }
 
+body.nav-open .hero__topbar {
+  background: linear-gradient(180deg, rgba(16, 10, 8, 0.92) 0%, rgba(16, 10, 8, 0.74) 100%);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+body.nav-open .hero__topbar .site-brand {
+  filter: blur(3px);
+  opacity: 0.28;
+  transition: filter 180ms ease, opacity 180ms ease;
+}
+
 .hero__topbar-inner {
   display: flex;
   align-items: center;
@@ -802,8 +814,9 @@ h3 {
     align-items: center;
     justify-items: stretch;
     gap: 16px;
-    padding-top: 14px;
-    padding-bottom: 14px;
+    min-height: 64px;
+    padding-top: 16px;
+    padding-bottom: 16px;
   }
 
   .site-logo img {
@@ -824,6 +837,14 @@ h3 {
     margin-left: auto;
     flex: 0 0 auto;
     align-self: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 9px;
+  }
+
+  .site-nav-toggle span {
+    width: 16px;
+    margin: 2px 0;
   }
 
   .site-nav {
@@ -874,7 +895,7 @@ h3 {
 
   .hero__inner {
     gap: var(--space-32);
-    padding-top: 152px;
+    padding-top: 112px;
   }
 
   .hero__copy h1 {
@@ -1023,7 +1044,7 @@ h3 {
   }
 
   .hero__inner {
-    padding-top: 148px;
+    padding-top: 108px;
   }
 
   .site-brand {

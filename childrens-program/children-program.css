@@ -309,7 +309,7 @@ body.nav-open .hero__topbar .site-brand {
   grid-template-columns: minmax(0, 1fr) minmax(360px, 0.92fr);
   gap: var(--space-48);
   align-items: center;
-  padding-top: 160px;
+  padding-top: 120px;
 }
 
 .hero__copy {
@@ -1907,7 +1907,7 @@ main > .section:first-of-type {
 
 @media (max-width: 900px) {
   .hero__topbar-inner,
-  .hero__inner,
+.hero__inner,
   .overview-grid,
   .compare-grid,
   .timing-grid,
@@ -2054,9 +2054,9 @@ main > .section:first-of-type {
   }
 
   .hero__inner {
-    gap: var(--space-32);
-    padding-top: 112px;
-  }
+  gap: var(--space-32);
+  padding-top: 88px;
+}
 
   .hero__copy h1 {
     margin-top: var(--space-24);
@@ -2262,7 +2262,7 @@ main > .section:first-of-type {
   }
 
   .hero__inner {
-    padding-top: 108px;
+    padding-top: 88px;
   }
 
   .site-brand {

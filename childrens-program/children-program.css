@@ -193,7 +193,7 @@ p {
 
 .site-brand__eyebrow {
   color: var(--white);
-  font-size: clamp(18px, 2.2vw, 24px);
+  font-size: clamp(16px, 2vw, 22px);
   font-weight: 700;
   white-space: nowrap;
 }
@@ -1984,7 +1984,7 @@ main > .section:first-of-type {
   }
 
   .site-brand__eyebrow {
-    font-size: clamp(16px, 4.8vw, 19px);
+    font-size: clamp(15px, 4.2vw, 18px);
   }
 
   .site-nav-toggle,

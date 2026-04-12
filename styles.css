@@ -49,6 +49,7 @@ body {
   background: var(--bg-cream);
   line-height: 1.65;
   overflow-x: hidden;
+  -webkit-tap-highlight-color: transparent;
 }
 
 body.nav-open {
@@ -881,12 +882,12 @@ body.nav-open .hero__topbar .site-brand {
     padding: 48px 0;
   }
 
-  .hero {
-    min-height: 90svh;
-  }
+    .hero {
+      min-height: 100svh;
+    }
 
-  .hero__content {
-    min-height: 90svh;
+    .hero__content {
+      min-height: 100svh;
     padding-top: 136px;
     padding-bottom: 28px;
   }

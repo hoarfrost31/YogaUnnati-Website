@@ -49,6 +49,7 @@ body {
   color: var(--text);
   font-size: var(--fs-body);
   line-height: var(--lh-body);
+  overflow-x: hidden;
 }
 
 body.nav-open {
@@ -192,7 +193,7 @@ p {
 
 .site-brand__eyebrow {
   color: var(--white);
-  font-size: var(--fs-h3);
+  font-size: clamp(18px, 2.2vw, 24px);
   font-weight: 700;
   white-space: nowrap;
 }
@@ -330,7 +331,7 @@ body.nav-open .hero__topbar .site-brand {
 }
 
 .hero__copy h1 {
-  margin-top: var(--space-16);
+  margin-top: var(--space-8);
   font-size: var(--fs-hero);
   font-weight: 700;
   line-height: var(--lh-tight);
@@ -1983,7 +1984,7 @@ main > .section:first-of-type {
   }
 
   .site-brand__eyebrow {
-    font-size: var(--fs-h3);
+    font-size: clamp(16px, 4.8vw, 19px);
   }
 
   .site-nav-toggle,
@@ -2059,7 +2060,7 @@ main > .section:first-of-type {
   }
 
   .hero__copy h1 {
-    margin-top: var(--space-24);
+    margin-top: var(--space-8);
     font-size: var(--fs-hero);
   }
 

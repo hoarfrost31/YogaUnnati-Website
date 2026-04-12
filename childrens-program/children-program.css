@@ -309,7 +309,7 @@ body.nav-open .hero__topbar .site-brand {
   grid-template-columns: minmax(0, 1fr) minmax(360px, 0.92fr);
   gap: var(--space-48);
   align-items: center;
-  padding-top: 80px;
+  padding-top: 64px;
 }
 
 .hero__copy {
@@ -2055,7 +2055,7 @@ main > .section:first-of-type {
 
   .hero__inner {
     gap: var(--space-32);
-    padding-top: 64px;
+    padding-top: 48px;
   }
 
   .hero__copy h1 {
@@ -2262,7 +2262,7 @@ main > .section:first-of-type {
   }
 
   .hero__inner {
-    padding-top: 64px;
+    padding-top: 48px;
   }
 
   .site-brand {

@@ -1,3 +1,102 @@
+const heroVideoShell = document.querySelector("[data-hero-video-shell]");
+const heroVideo = heroVideoShell?.querySelector("[data-hero-video]");
+const heroVideoToggle = heroVideoShell?.querySelector("[data-hero-video-toggle]");
+const heroVideoSound = heroVideoShell?.querySelector("[data-hero-video-sound]");
+
+if (heroVideoShell && heroVideo && heroVideoToggle) {
+  let heroVideoIdleTimer;
+
+  const showHeroVideoControls = () => {
+    heroVideoShell.classList.remove("is-idle");
+    window.clearTimeout(heroVideoIdleTimer);
+    if (!heroVideo.paused && !heroVideo.ended) {
+      heroVideoIdleTimer = window.setTimeout(() => {
+        heroVideoShell.classList.add("is-idle");
+      }, 1800);
+    }
+  };
+
+  const syncHeroVideoSoundState = () => {
+    const isMuted = heroVideo.muted || heroVideo.volume === 0;
+    heroVideoShell.classList.toggle("is-muted", isMuted);
+    if (heroVideoSound) {
+      heroVideoSound.setAttribute("aria-pressed", String(!isMuted));
+      heroVideoSound.setAttribute("aria-label", isMuted ? "Unmute video" : "Mute video");
+    }
+  };
+
+  const syncHeroVideoState = () => {
+    const isPlaying = !heroVideo.paused && !heroVideo.ended;
+    heroVideoShell.classList.toggle("is-playing", isPlaying);
+    if (!isPlaying) {
+      heroVideoShell.classList.remove("is-idle");
+      window.clearTimeout(heroVideoIdleTimer);
+    }
+    heroVideoToggle.setAttribute("aria-pressed", String(isPlaying));
+    syncHeroVideoSoundState();
+  };
+
+  const toggleHeroVideo = async () => {
+    try {
+      if (heroVideo.paused || heroVideo.ended) {
+        heroVideo.muted = false;
+        syncHeroVideoSoundState();
+        await heroVideo.play();
+      } else {
+        heroVideo.pause();
+      }
+    } catch (error) {
+      syncHeroVideoState();
+    }
+  };
+
+  heroVideoToggle.addEventListener("click", (event) => {
+    event.stopPropagation();
+    toggleHeroVideo();
+  });
+
+  if (heroVideoSound) {
+    heroVideoSound.addEventListener("click", (event) => {
+      event.stopPropagation();
+      heroVideo.muted = !heroVideo.muted;
+      syncHeroVideoSoundState();
+      showHeroVideoControls();
+    });
+  }
+
+  heroVideoShell.addEventListener("click", (event) => {
+    if (event.target.closest("[data-hero-video-toggle], [data-hero-video-sound]")) return;
+    showHeroVideoControls();
+    toggleHeroVideo();
+  });
+
+  ["pointerdown", "touchstart", "mousemove", "focusin"].forEach((eventName) => {
+    heroVideoShell.addEventListener(eventName, showHeroVideoControls, { passive: true });
+  });
+
+  ["play", "pause", "ended", "volumechange"].forEach((eventName) => {
+    heroVideo.addEventListener(eventName, syncHeroVideoState);
+  });
+
+  heroVideo.addEventListener("play", showHeroVideoControls);
+
+  if ("IntersectionObserver" in window) {
+    const heroVideoObserver = new IntersectionObserver(
+      (entries) => {
+        const entry = entries[0];
+        if (!entry.isIntersecting || entry.intersectionRatio < 0.35) {
+          heroVideo.pause();
+        }
+      },
+      { threshold: [0, 0.35, 0.75] }
+    );
+
+    heroVideoObserver.observe(heroVideoShell);
+  }
+
+  syncHeroVideoState();
+}
+
 const gallerySlider = document.querySelector("[data-gallery-slider]");
 const galleryTrack = gallerySlider?.querySelector("[data-gallery-track]");
 const gallerySlides = Array.from(galleryTrack?.querySelectorAll(".gallery-slide") || []);

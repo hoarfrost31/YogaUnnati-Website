@@ -551,7 +551,7 @@ body.nav-open .hero__topbar .site-brand {
   margin-top: auto;
   padding: 15px 24px;
   border-radius: var(--radius-sm);
-  background: linear-gradient(180deg, #d8a761 0%, var(--accent-deep) 100%);
+  background: var(--accent-deep);
   color: #fff;
   font-size: var(--fs-small);
   font-weight: 700;
@@ -700,7 +700,7 @@ body.nav-open .hero__topbar .site-brand {
   min-height: 48px;
   padding: 16px 24px;
   border-radius: 999px;
-  background: linear-gradient(180deg, #d8a761 0%, var(--accent-deep) 100%);
+  background: var(--accent-deep);
   color: #23140f;
   font-size: var(--fs-small);
   font-weight: 700;
@@ -709,6 +709,30 @@ body.nav-open .hero__topbar .site-brand {
   transition: transform 180ms ease, box-shadow 180ms ease, background-color 180ms ease, filter 180ms ease;
 }
 
+
+.button--with-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+}
+
+.button__whatsapp-icon {
+  width: 16px;
+  height: 16px;
+  color: currentColor;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+}
+
+.button__whatsapp-icon svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  fill: currentColor;
+}
 .button:hover {
   transform: translateY(-2px) scale(1.03);
   box-shadow: 0 12px 24px rgba(42, 24, 18, 0.14);

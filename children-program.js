@@ -1,3 +1,80 @@
+const heroVideoShell = document.querySelector("[data-hero-video-shell]");
+const heroVideo = heroVideoShell?.querySelector("[data-hero-video]");
+const heroVideoToggle = heroVideoShell?.querySelector("[data-hero-video-toggle]");
+const heroVideoMute = heroVideoShell?.querySelector("[data-hero-video-mute]");
+const heroVideoProgress = heroVideoShell?.querySelector("[data-hero-video-progress]");
+
+if (heroVideoShell && heroVideo && heroVideoToggle) {
+  const syncHeroVideoState = () => {
+    const isPlaying = !heroVideo.paused && !heroVideo.ended;
+    heroVideoShell.classList.toggle("is-playing", isPlaying);
+    heroVideoShell.classList.toggle("is-muted", heroVideo.muted);
+    heroVideoToggle.setAttribute("aria-pressed", String(isPlaying));
+    if (heroVideoMute) {
+      heroVideoMute.setAttribute("aria-pressed", String(heroVideo.muted));
+      heroVideoMute.setAttribute("aria-label", heroVideo.muted ? "Unmute video" : "Mute video");
+    }
+  };
+
+  const syncHeroVideoProgress = () => {
+    if (!heroVideoProgress) return;
+    const ratio = heroVideo.duration ? heroVideo.currentTime / heroVideo.duration : 0;
+    heroVideoProgress.style.width = `${Math.max(0, Math.min(1, ratio)) * 100}%`;
+  };
+
+  const toggleHeroVideo = async () => {
+    try {
+      if (heroVideo.paused || heroVideo.ended) {
+        await heroVideo.play();
+      } else {
+        heroVideo.pause();
+      }
+    } catch (error) {
+      syncHeroVideoState();
+    }
+  };
+
+  heroVideoToggle.addEventListener("click", (event) => {
+    event.stopPropagation();
+    toggleHeroVideo();
+  });
+
+  heroVideoShell.addEventListener("click", (event) => {
+    if (event.target.closest("[data-hero-video-toggle]")) return;
+    toggleHeroVideo();
+  });
+
+  heroVideoToggle.addEventListener("keydown", (event) => {
+    if (event.key !== "Enter" && event.key !== " ") return;
+    event.preventDefault();
+    toggleHeroVideo();
+  });
+
+  heroVideoMute?.addEventListener("click", (event) => {
+    event.stopPropagation();
+    heroVideo.muted = !heroVideo.muted;
+    syncHeroVideoState();
+  });
+
+  heroVideoMute?.addEventListener("keydown", (event) => {
+    if (event.key !== "Enter" && event.key !== " ") return;
+    event.preventDefault();
+    heroVideo.muted = !heroVideo.muted;
+    syncHeroVideoState();
+  });
+
+  ["play", "pause", "ended", "volumechange"].forEach((eventName) => {
+    heroVideo.addEventListener(eventName, syncHeroVideoState);
+  });
+
+  ["timeupdate", "loadedmetadata", "ended"].forEach((eventName) => {
+    heroVideo.addEventListener(eventName, syncHeroVideoProgress);
+  });
+
+  syncHeroVideoState();
+  syncHeroVideoProgress();
+}
+
 const gallerySlider = document.querySelector("[data-gallery-slider]");
 const galleryTrack = gallerySlider?.querySelector("[data-gallery-track]");
 const gallerySlides = Array.from(galleryTrack?.querySelectorAll(".gallery-slide") || []);

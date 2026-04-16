@@ -21,8 +21,8 @@
   --radius-sm: 8px;
   --radius-md: 12px;
   --radius-lg: 16px;
-  --font-body: "Manrope", sans-serif;
-  --font-display: "Cormorant Garamond", serif;
+  --font-body: "Manrope", "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif;
+  --font-display: "Cormorant Garamond", "Segoe UI Emoji", "Apple Color Emoji", "Noto Color Emoji", serif;
   --fs-h1: clamp(42px, 5vw, 56px);
   --fs-h2: clamp(30px, 3.4vw, 36px);
   --fs-h3: clamp(20px, 2.2vw, 24px);

@@ -362,7 +362,7 @@ body.nav-open .hero__topbar .site-brand {
 }
 
 .hero__lead {
-  margin-top: var(--space-24);
+  margin-top: var(--space-8);
   max-width: 620px;
   font-size: var(--fs-body);
   color: rgba(248, 240, 228, 0.88);
@@ -1424,6 +1424,34 @@ main > .section:first-of-type {
 .investment-upgrade-note--tight {
   margin-top: var(--space-64);
   margin-bottom: calc(-1 * var(--space-24));
+}
+
+.guarantee-section {
+  padding-top: 0;
+}
+
+.guarantee-card {
+  max-width: 760px;
+  padding: var(--space-32);
+  border: 1px solid rgba(47, 33, 26, 0.08);
+  border-radius: 24px;
+  background: var(--beige-panel);
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+
+.guarantee-card h2 {
+  margin-top: var(--space-8);
+  font-family: "Cormorant Garamond", serif;
+  font-size: var(--fs-h2);
+  line-height: var(--lh-tight);
+  color: var(--brown);
+}
+
+.guarantee-card p:not(.section-kicker) {
+  margin-top: var(--space-16);
+  color: var(--text-muted);
+  font-weight: 600;
 }
 
 @media (max-width: 900px) {

@@ -1,4 +1,4 @@
-:root {
+﻿:root {
   --brown: #6b3421;
   --brown-deep: #432117;
   --beige: #f6f1e8;
@@ -362,7 +362,7 @@ body.nav-open .hero__topbar .site-brand {
 }
 
 .hero__lead {
-  margin-top: var(--space-8);
+  margin-top: var(--space-24);
   max-width: 620px;
   font-size: var(--fs-body);
   color: rgba(248, 240, 228, 0.88);
@@ -374,7 +374,7 @@ body.nav-open .hero__topbar .site-brand {
   color: #ffe4b4;
 }
 .hero-cta-note {
-  margin-top: var(--space-16);
+  margin-top: var(--space-24);
   font-size: var(--fs-small);
   font-weight: 600;
   color: rgba(248, 240, 228, 0.88);
@@ -451,7 +451,7 @@ body.nav-open .hero__topbar .site-brand {
   .hero-trust--mobile {
     display: block;
     text-align: center;
-    margin-top: var(--space-16);
+    margin-top: var(--space-24);
     margin-bottom: var(--space-8);
   }
 
@@ -466,7 +466,7 @@ body.nav-open .hero__topbar .site-brand {
 
   .hero-cta-note--mobile {
     display: block;
-    margin-top: var(--space-16);
+    margin-top: var(--space-24);
     text-align: center;
   }
 }
@@ -834,7 +834,7 @@ main > .section:first-of-type {
 .batch-card p + p,
 .batch-list,
 .benefit-strip {
-  margin-top: var(--space-16);
+  margin-top: var(--space-24);
 }
 
 .batch-list {
@@ -1165,7 +1165,7 @@ main > .section:first-of-type {
 .timing-panel h2,
 .timing-list,
 .story-copy p + p {
-  margin-top: var(--space-16);
+  margin-top: var(--space-24);
 }
 
 .timing-panel p,
@@ -1272,11 +1272,11 @@ main > .section:first-of-type {
   }
 
   .investment-subtext {
-    margin-top: var(--space-16);
+    margin-top: var(--space-24);
   }
 
   .investment-price {
-    margin-top: var(--space-16);
+    margin-top: var(--space-24);
   }
 
   .investment-note {
@@ -1391,7 +1391,7 @@ main > .section:first-of-type {
 }
 
 .investment-guidance {
-  margin-top: var(--space-16);
+  margin-top: var(--space-24);
   font-size: var(--fs-small);
   font-weight: 600;
   color: var(--text);
@@ -1449,7 +1449,7 @@ main > .section:first-of-type {
 }
 
 .guarantee-card p:not(.section-kicker) {
-  margin-top: var(--space-16);
+  margin-top: var(--space-24);
   color: var(--text-muted);
   font-weight: 600;
 }
@@ -1512,7 +1512,7 @@ main > .section:first-of-type {
 }
 
 .batch-strip .button {
-  margin-top: var(--space-16);
+  margin-top: var(--space-24);
 }
 
 .batch-strip .cta-support__note {
@@ -1561,7 +1561,7 @@ main > .section:first-of-type {
 .faq-item .faq-content {
   display: grid;
   gap: var(--space-12);
-  margin-top: var(--space-16);
+  margin-top: var(--space-24);
   overflow: hidden;
   max-height: 0;
   opacity: 0;
@@ -1919,7 +1919,7 @@ main > .section:first-of-type {
 
 .sharing cite {
   display: block;
-  margin-top: var(--space-16);
+  margin-top: var(--space-24);
   font-weight: 700;
   font-size: var(--fs-small);
 }
@@ -2575,3 +2575,7 @@ main > .section:first-of-type {
   }
 
 }
+
+
+
+

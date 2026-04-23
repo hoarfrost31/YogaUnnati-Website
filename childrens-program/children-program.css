@@ -1432,18 +1432,19 @@ main > .section:first-of-type {
 
 .guarantee-card {
   max-width: 760px;
-  padding: var(--space-32);
-  border: 1px solid rgba(47, 33, 26, 0.08);
+  padding: var(--space-40) var(--space-48);
+  border: 1px solid rgba(47, 33, 26, 0.06);
   border-radius: 24px;
-  background: var(--beige-panel);
-  box-shadow: var(--shadow);
+  background: #f5ede1;
+  box-shadow: 0 14px 34px rgba(47, 33, 26, 0.05);
   text-align: center;
 }
 
 .guarantee-card h2 {
-  margin-top: var(--space-8);
+  margin-top: var(--space-12);
   font-family: "Cormorant Garamond", serif;
   font-size: var(--fs-h2);
+  font-weight: 600;
   line-height: var(--lh-tight);
   color: var(--brown);
 }
@@ -1451,7 +1452,19 @@ main > .section:first-of-type {
 .guarantee-card p:not(.section-kicker) {
   margin-top: var(--space-24);
   color: var(--text-muted);
-  font-weight: 600;
+  font-weight: 500;
+  line-height: 1.7;
+}
+
+.guarantee-card .section-kicker {
+  letter-spacing: 0.16em;
+  color: rgba(109, 78, 60, 0.7);
+}
+
+@media (max-width: 720px) {
+  .guarantee-card {
+    padding: var(--space-32) var(--space-24);
+  }
 }
 
 @media (max-width: 900px) {

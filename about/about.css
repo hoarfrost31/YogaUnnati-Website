@@ -371,6 +371,10 @@ body.nav-open .hero__topbar .site-brand {
   object-fit: cover;
 }
 
+.volunteer-photo--kapil {
+  object-position: center 30%;
+}
+
 .volunteer-card h3 {
   font-family: "Cormorant Garamond", serif;
   font-size: 26px;

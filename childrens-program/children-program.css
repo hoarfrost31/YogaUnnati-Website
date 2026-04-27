@@ -226,6 +226,8 @@ p {
 .hero {
   background: linear-gradient(180deg, rgba(67, 33, 23, 0.98) 0%, rgba(107, 52, 33, 0.96) 100%);
   color: var(--white);
+  width: 100%;
+  overflow: hidden;
   padding: 0 0 var(--space-80);
 }
 
@@ -340,6 +342,13 @@ body.nav-open .hero__topbar .site-brand {
 
 .hero__copy {
   display: grid;
+  min-width: 0;
+  width: 100%;
+}
+
+.hero__media {
+  min-width: 0;
+  width: 100%;
 }
 
 .hero__eyebrow,

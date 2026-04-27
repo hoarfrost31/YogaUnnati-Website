@@ -42,6 +42,7 @@
   box-sizing: border-box;
 }
 
+html,
 body {
   margin: 0;
   font-family: "Manrope", "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif;
@@ -2537,7 +2538,7 @@ main > .section:first-of-type {
   .sharing {
     width: 100%;
     max-width: 420px;
-    transform: scale(1.15);
+    transform: none;
     transform-origin: center;
     margin: 12px 0;
   }
